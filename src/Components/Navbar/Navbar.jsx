@@ -1,6 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
+
+    const { users } = useContext(AuthContext)
+
+    const handelSingOut = () => {
+        // logOut(auth)
+            // .then()
+            // .catch()
+    }
 
     const navLink = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-400 border border-orange-400 btn hover:bg-white shadow-none hover:border-orange-400' : 'btn bg-white shadow-none border-none'}>Home</NavLink></li>
@@ -32,7 +42,21 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+            <div className="navbar-end ">
+                {
+                    users ?
+                        <div className="flex gap-2">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full ">
+                                    <img className="hidden md:flex lg:flex" alt="User Avatar" src={users.photoURL} title={users.displayName} />
+                                </div>
+                            </div>
+                            <Link onClick={handelSingOut} className="btn bg-green-500 text-white hover:bg-green-500 text-white">Log Out</Link>
+                        </div>
+                        :
+                        <Link className="btn bg-green-500 text-white hover:bg-green-500 text-white" to='/login'>Login</Link>
+                }
+            </div>
             </div>
         </div>
     );
