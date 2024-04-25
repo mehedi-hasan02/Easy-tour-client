@@ -2,12 +2,12 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser,handleUpdateProfile,logOut } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
@@ -27,8 +27,8 @@ const Register = () => {
         }
         createUser(email, password)
         .then(res => {
-            // handleUpdateProfile(name,photo)
-            // logOut()
+            handleUpdateProfile(name,photo)
+            logOut()
             toast.success('User created successfully');
             navigate('/')
         })
