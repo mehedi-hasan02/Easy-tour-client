@@ -1,22 +1,23 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext } from "react";
+import auth from "../Firebase/firebase.config";
 
 const Navbar = () => {
 
-    const { users } = useContext(AuthContext)
+    const { users,logOut } = useContext(AuthContext)
 
     const handelSingOut = () => {
-        // logOut(auth)
-            // .then()
-            // .catch()
+        logOut(auth)
+            .then()
+            .catch()
     }
 
     const navLink = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-400 border border-orange-400 btn hover:bg-white shadow-none hover:border-orange-400' : 'btn bg-white shadow-none border-none'}>Home</NavLink></li>
-        <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-400 border border-orange-400 btn hover:bg-white shadow-none hover:border-orange-400' : 'btn bg-white shadow-none border-none'}>All Tourists Spot</NavLink></li>
-        <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-400 border border-orange-400 btn hover:bg-white shadow-none hover:border-orange-400' : 'btn bg-white shadow-none border-none'}>Add Tourists Spot</NavLink></li>
-        <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-400 border border-orange-400 btn hover:bg-white shadow-none hover:border-orange-400' : 'btn bg-white shadow-none border-none'}>My List</NavLink></li>
+        <li><NavLink to='/allTouristsSpots' className={({ isActive }) => isActive ? 'text-orange-400 border border-orange-400 btn hover:bg-white shadow-none hover:border-orange-400' : 'btn bg-white shadow-none border-none'}>All Tourists Spot</NavLink></li>
+        <li><NavLink to='/addTouristsSpots' className={({ isActive }) => isActive ? 'text-orange-400 border border-orange-400 btn hover:bg-white shadow-none hover:border-orange-400' : 'btn bg-white shadow-none border-none'}>Add Tourists Spot</NavLink></li>
+        <li><NavLink to='/myList' className={({ isActive }) => isActive ? 'text-orange-400 border border-orange-400 btn hover:bg-white shadow-none hover:border-orange-400' : 'btn bg-white shadow-none border-none'}>My List</NavLink></li>
     </>
 
     return (

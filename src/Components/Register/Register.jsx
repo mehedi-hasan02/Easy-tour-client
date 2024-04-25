@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
 
@@ -39,7 +40,13 @@ const Register = () => {
     }
 
     return (
-        <div>
+        <div className="mt-10 mb-10 p-5">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Register</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
+            <h1 className="text-5xl font-bold text-center mt-5 mb-5">Register now!</h1>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-5">
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                     <div className="form-control">
