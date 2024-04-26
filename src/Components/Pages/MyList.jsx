@@ -2,12 +2,17 @@ import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FiEdit2 } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
+import { useState } from "react";
 // import MyListCard from '../MyListCard/MyListCard'
 
 const MyList = () => {
     const touristSpot = useLoaderData();
-    // console.log(touristSpot);
-    const {_id} = touristSpot;
+    const [myListData, setMyListData] = useState(touristSpot)
+
+    const handelDelete = id =>{
+        console.log(id);
+    }
+
     return (
         <div>
             <div className="overflow-x-auto">
@@ -25,7 +30,7 @@ const MyList = () => {
     </thead>
     <tbody>
       {
-        touristSpot.map(spot=> <tr key={spot._id}>
+        myListData.map(spot=> <tr key={spot._id}>
             {/* <th>1</th> */}
             <td>{spot.spotName}</td>
             <td>{spot.location}</td>
@@ -36,7 +41,7 @@ const MyList = () => {
                     <button className="btn"><FiEdit2/></button>
                 </Link>
                 <Link>
-                    <button className='btn'><MdDelete/></button>
+                    <button onClick={()=>handelDelete(spot._id)} className='btn'><MdDelete/></button>
                 </Link>
             </td>
           </tr>)
