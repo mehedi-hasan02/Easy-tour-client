@@ -21,7 +21,8 @@ const router = createBrowserRouter([
         },
         {
             path: '/allTouristsSpots',
-            element: <AllTouristsSpot/>
+            element: <AllTouristsSpot/>,
+            loader: ()=>fetch('http://localhost:8000/tourist'),
         },
         {
             path: '/login',
@@ -37,13 +38,15 @@ const router = createBrowserRouter([
         },
         {
             path: '/myList',
-            element: <PrivateRouter><MyList></MyList></PrivateRouter>
+            element: <PrivateRouter><MyList></MyList></PrivateRouter>,
+            loader: ()=>fetch('http://localhost:8000/tourist'),
         },
         {
             path: '/spotDetails/:id',
             element: <PrivateRouter><SpotDetails></SpotDetails></PrivateRouter>,
             loader: ({params})=>fetch(`http://localhost:8000/tourist/${params.id}`),
-        }
+        },
+
     ]
     },
   ]);

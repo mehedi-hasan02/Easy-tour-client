@@ -5,13 +5,14 @@ import TouristSpot from "../TouristSpot/TouristSpot";
 
 const Home = () => {
     const touristSpots = useLoaderData(); 
+    // console.log(touristSpots)
     return (
         <div>
             <div className="lg:mt-10">
                 <Banner></Banner>
                 <div className="grid grid-cols-3 gap-8">
                     {
-                        touristSpots.map(touristSpot => <TouristSpot key={touristSpot._id} touristSpot={touristSpot} ></TouristSpot>)
+                        touristSpots.slice(0,6).map(touristSpot => <TouristSpot key={touristSpot._id} touristSpot={touristSpot} ></TouristSpot>)
                     }
                 </div>
             </div>
