@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FiEdit2 } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 import { useState } from "react";
+import Swal from "sweetalert2";
 // import MyListCard from '../MyListCard/MyListCard'
 
 const MyList = () => {
@@ -10,7 +11,36 @@ const MyList = () => {
     const [myListData, setMyListData] = useState(touristSpot)
 
     const handelDelete = id =>{
-        console.log(id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`http://localhost:8000/tourist/${id}`, {
+                        method: 'DELETE',
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                            if (data.deletedCount > 0) {
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Your file has been deleted.",
+                                    icon: "success"
+                                });
+                                const remaining = myListData.filter(data => data._id !== id);
+                                setMyListData(remaining);
+                                // window.location.reload();
+                            }
+                        })
+                }
+            });
     }
 
     return (
