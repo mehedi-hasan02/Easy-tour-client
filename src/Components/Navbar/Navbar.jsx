@@ -55,7 +55,10 @@ const Navbar = () => {
                             <Link onClick={handelSingOut} className="btn bg-green-500 text-white hover:bg-green-500 text-white">Log Out</Link>
                         </div>
                         :
-                        <Link className="btn bg-green-500 text-white hover:bg-green-500 text-white" to='/login'>Login</Link>
+                        <div>
+                            <Link className="btn bg-green-500 text-white hover:bg-green-500 text-white" to='/login'>Login</Link>
+                            <Link className="btn bg-green-500 text-white hover:bg-green-500 text-white" to='/register'>Register</Link>
+                        </div>
                 }
             </div>
             </div>
