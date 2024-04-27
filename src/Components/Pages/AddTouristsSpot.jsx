@@ -54,11 +54,11 @@ const AddTouristsSpot = () => {
         <div>
             <div className="text-center mt-10 space-y-5">
                 <h1 className="text-3xl font-bold">Add Tourists Spot</h1>
-                <p className="w-2/3 mx-auto">Welcome to our 'Add Tourist Spot' page! Have you discovered an amazing destination that the world should know about? Share it with us here. Simply fill out the form with details about the tourist spot, including its name, location, description, and any captivating images you have. Help us enrich our database and inspire fellow travelers to explore new horizons. Let's promote tourism together!</p>
+                <p className="lg:w-2/3 mx-auto">Welcome to our 'Add Tourist Spot' page! Have you discovered an amazing destination that the world should know about? Share it with us here. Simply fill out the form with details about the tourist spot, including its name, location, description, and any captivating images you have. Help us enrich our database and inspire fellow travelers to explore new horizons. Let's promote tourism together!</p>
             </div>
             <div className="mt-10 mb-10">
                 <form onSubmit={handelAddTourist}>
-                    <div className="flex justify-center gap-6">
+                    <div className="flex flex-col lg:flex-row justify-center gap-2 lg:gap-6">
                         <div className="w-full">
                             <label className="label">
                                 <span className="label-text text-xl font-semibold">Tourists Spot Name</span>
@@ -72,7 +72,7 @@ const AddTouristsSpot = () => {
                             <input type="text" name="location" placeholder="Enter tourists location" className="input input-bordered w-full" />
                         </div>
                     </div>
-                    <div className="flex justify-center gap-6">
+                    <div className="flex flex-col lg:flex-row justify-center gap-2 lg:gap-6">
                         <div className="w-full">
                             <label className="label">
                                 <span className="label-text text-xl font-semibold">Country</span>
@@ -86,7 +86,7 @@ const AddTouristsSpot = () => {
                             <input type="text" name="season" placeholder="Enter seasonality" className="input input-bordered w-full" />
                         </div>
                     </div>
-                    <div className="flex justify-center gap-6">
+                    <div className="flex flex-col lg:flex-row justify-center gap-2 lg:gap-6">
                         <div className="w-full">
                             <label className="label">
                                 <span className="label-text text-xl font-semibold">Average Cost</span>
@@ -100,7 +100,7 @@ const AddTouristsSpot = () => {
                             <input type="text" name="TravelTime" placeholder="How many day you want to stay!" className="input input-bordered w-full" />
                         </div>
                     </div>
-                    <div className="flex justify-center gap-6">
+                    <div className="flex flex-col lg:flex-row justify-center gap-2 lg:gap-6">
                         <div className="w-full">
                             <label className="label">
                                 <span className="label-text text-xl font-semibold">Total Visitor Per-Year</span>
@@ -114,7 +114,7 @@ const AddTouristsSpot = () => {
                             <input type="text" name="image" placeholder="Enter image URL" className="input input-bordered w-full" />
                         </div>
                     </div>
-                    <div className="flex justify-center gap-6">
+                    <div className="flex flex-col lg:flex-row justify-center gap-2 lg:gap-6">
                         <div className="w-full">
                             <label className="label">
                                 <span className="label-text text-xl font-semibold">User Name</span>

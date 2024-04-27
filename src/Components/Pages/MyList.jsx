@@ -8,20 +8,20 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 // import MyListCard from '../MyListCard/MyListCard'
 
 const MyList = () => {
-    const {users} = useContext(AuthContext);
+    const { users } = useContext(AuthContext);
     const [myListData, setMyListData] = useState([]);
     // console.log(myListData);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`http://localhost:8000/emailTour/${users.email}`)
-        .then(res=>res.json())
-        .then(data=>{
-            setMyListData(data)
-            console.log(data);
-        })
-    },[])
+            .then(res => res.json())
+            .then(data => {
+                setMyListData(data)
+                // console.log(data);
+            })
+    }, [])
 
-    const handelDelete = id =>{
+    const handelDelete = id => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -55,41 +55,39 @@ const MyList = () => {
     }
 
     return (
-        <div>
-            <div className="overflow-x-auto">
-  <table className="table">
-    {/* head */}
-    <thead>
-      <tr>
-        {/* <th></th> */}
-        <th>Tourist Spot Name</th>
-        <th>Location</th>
-        <th>Country</th>
-        <th>Season</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        myListData.map(spot=> <tr key={spot._id}>
-            {/* <th>1</th> */}
-            <td>{spot.spotName}</td>
-            <td>{spot.location}</td>
-            <td>{spot.country}</td>
-            <td>{spot.season}</td>
-            <td className='flex gap-1'>
-                <Link to={`/update/${spot._id}`}>
-                    <button className="btn"><FiEdit2/></button>
-                </Link>
-                <Link>
-                    <button onClick={()=>handelDelete(spot._id)} className='btn'><MdDelete/></button>
-                </Link>
-            </td>
-          </tr>)
-      } 
-    </tbody>
-  </table>
-</div>
+        <div className="overflow-x-auto md:min-h-[280px] lg:min-h-[700px]">
+            <table className="table">
+                {/* head */}
+                <thead>
+                    <tr>
+                        {/* <th></th> */}
+                        <th>Tourist Spot Name</th>
+                        <th>Location</th>
+                        <th>Country</th>
+                        <th>Season</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        myListData.map(spot => <tr key={spot._id}>
+                            {/* <th>1</th> */}
+                            <td>{spot.spotName}</td>
+                            <td>{spot.location}</td>
+                            <td>{spot.country}</td>
+                            <td>{spot.season}</td>
+                            <td className='flex gap-1'>
+                                <Link to={`/update/${spot._id}`}>
+                                    <button className="btn"><FiEdit2 /></button>
+                                </Link>
+                                <Link>
+                                    <button onClick={() => handelDelete(spot._id)} className='btn'><MdDelete /></button>
+                                </Link>
+                            </td>
+                        </tr>)
+                    }
+                </tbody>
+            </table>
         </div>
     );
 };
