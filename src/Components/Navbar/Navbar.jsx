@@ -2,10 +2,11 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext } from "react";
 import auth from "../Firebase/firebase.config";
+import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
 
-    const { users,logOut } = useContext(AuthContext)
+    const { users, logOut } = useContext(AuthContext)
 
     const handelSingOut = () => {
         logOut(auth)
@@ -33,7 +34,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">EasyTour</a>
+                <Link to='/' className="btn btn-ghost text-xl">EasyTour</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -41,27 +42,35 @@ const Navbar = () => {
                         navLink
                     }
                 </ul>
-            </div>
-            <div className="navbar-end">
-            <div className="navbar-end ">
-                {
-                    users ?
-                        <div className="flex gap-2">
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full ">
-                                    <img className="hidden md:flex lg:flex" alt="User Avatar" src={users.photoURL} title={users.displayName} />
-                                </div>
+            </div>           
+                <div className="navbar-end ">
+                    <div className="dropdown dropdown-end">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                {
+                                    users ? <img className="" alt="User Avatar" src={users.photoURL} title={users.displayName} />
+                                        :
+                                        <FaRegUserCircle className="w-[40px] h-[40px]"/>
+                                }
                             </div>
-                            <Link onClick={handelSingOut} className="btn bg-green-500 text-white hover:bg-green-500 text-white">Log Out</Link>
                         </div>
-                        :
-                        <div>
-                            <Link className="btn bg-green-500 text-white hover:bg-green-500 text-white" to='/login'>Login</Link>
-                            <Link className="btn bg-green-500 text-white hover:bg-green-500 text-white" to='/register'>Register</Link>
-                        </div>
-                }
-            </div>
-            </div>
+                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                            {
+                                users ?
+                                    <div>
+                                        <Link onClick={handelSingOut} className="btn bg-green-500 text-white hover:bg-green-500 text-white w-full">Log Out</Link>
+
+                                    </div>
+                                    :
+                                    <div className="flex flex-col">
+                                        <Link className="btn bg-green-500 text-white hover:bg-green-500 text-white" to='/login'>Login</Link>
+                                        <Link className="btn bg-green-500 text-white hover:bg-green-500 text-white" to='/register'>Register</Link>
+                                    </div>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            
         </div>
     );
 };

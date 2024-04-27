@@ -2,13 +2,24 @@ import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FiEdit2 } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 // import MyListCard from '../MyListCard/MyListCard'
 
 const MyList = () => {
-    const touristSpot = useLoaderData();
-    const [myListData, setMyListData] = useState(touristSpot)
+    const {users} = useContext(AuthContext);
+    const [myListData, setMyListData] = useState([]);
+    // console.log(myListData);
+
+    useEffect(()=>{
+        fetch(`http://localhost:8000/emailTour/${users.email}`)
+        .then(res=>res.json())
+        .then(data=>{
+            setMyListData(data)
+            console.log(data);
+        })
+    },[])
 
     const handelDelete = id =>{
         Swal.fire({
