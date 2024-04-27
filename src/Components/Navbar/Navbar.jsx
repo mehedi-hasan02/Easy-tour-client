@@ -1,17 +1,35 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
 import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
 
     const { users, logOut } = useContext(AuthContext)
+    const [theme, setTheme] = useState('light');
 
     const handelSingOut = () => {
         logOut(auth)
             .then()
             .catch()
+    }
+
+
+    useEffect(()=>{
+        localStorage.setItem('theme',theme);
+        const localTheme = localStorage.getItem('theme');
+        document.querySelector('html').setAttribute('data-theme',localTheme);
+
+    },[theme])
+
+    const handelTheme = (e) =>{
+        if(e.target.checked)
+        {
+            setTheme('dark');
+        }else{
+            setTheme('light');
+        }
     }
 
     const navLink = <>
@@ -44,6 +62,7 @@ const Navbar = () => {
                 </ul>
             </div>           
                 <div className="navbar-end ">
+                <input onChange={handelTheme}  type="checkbox"  className="toggle theme-controller"/>
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">

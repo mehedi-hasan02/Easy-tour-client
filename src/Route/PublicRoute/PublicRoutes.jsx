@@ -9,11 +9,13 @@ import MyList from "../../Components/Pages/MyList";
 import Home from "../../Components/Pages/Home";
 import SpotDetails from "../../Components/SpotDetails/SpotDetails";
 import UpdateData from "../../Components/UpdateData/UpdateData";
+import Error from "../../Components/Error/Error";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout/>,
+      errorElement:<Error></Error>,
       children:[
         {
             path: '/',
