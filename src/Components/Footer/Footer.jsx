@@ -24,8 +24,8 @@ const Footer = () => {
 
         // </footer>
         <footer className="footer footer-center p-10 bg-black text-white rounded">
-            <h1 className="text-5xl font-bold">Easy Tour</h1>
-            <nav className="grid grid-flow-col gap-4">
+            <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold">Easy Tour</h1>
+            <nav className="grid grid-cols-1 md:grid-flow-col lg:grid-flow-col gap-4">
                 <Link className="link link-hover">About us</Link>
                 <Link className="link link-hover">Contact</Link>
                 <Link className="link link-hover">Jobs</Link>

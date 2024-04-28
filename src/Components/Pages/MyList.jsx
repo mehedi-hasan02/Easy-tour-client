@@ -53,7 +53,7 @@ const MyList = () => {
     }
 
     return (
-        <div className="overflow-x-auto md:min-h-[280px] lg:min-h-[700px]">
+        <div className="overflow-x-auto md:min-h-[280px] min-h-[250px] md:min-h-[700px] lg:min-h-[700px]">
             <table className="table">
                 <thead>
                     <tr>

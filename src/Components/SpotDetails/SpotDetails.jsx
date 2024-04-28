@@ -6,7 +6,7 @@ const SpotDetails = () => {
     const loadedSpot = useLoaderData();
     const { image, country, spotName, location, season, avgCost, TravelTime, TotalVisitor,shortDescription } = loadedSpot;
     return (
-        <div className="card card-side bg-base-100 shadow-xl mt-10 mb-20">
+        <div className="card lg:card-side bg-base-100 shadow-xl mt-10 mb-20">
             <figure><img src={image} alt="Movie"/></figure>
             <div className="p-5 space-y-2">
                 <h2 className="card-title">{spotName}</h2>

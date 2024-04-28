@@ -60,7 +60,7 @@ const AddTouristsSpot = () => {
                 <h1 className="text-3xl font-bold">Add Tourists Spot</h1>
                 <p className="lg:w-2/3 mx-auto">Welcome to our 'Add Tourist Spot' page! Have you discovered an amazing destination that the world should know about? Share it with us here. Simply fill out the form with details about the tourist spot, including its name, location, description, and any captivating images you have. Help us enrich our database and inspire fellow travelers to explore new horizons. Let's promote tourism together!</p>
             </div>
-            <div className="mt-10 mb-10">
+            <div className="mt-10 mb-10 px-2 md:px-0 lg:px-0">
                 <form onSubmit={handelAddTourist}>
                     <div className="flex flex-col lg:flex-row justify-center gap-2 lg:gap-6">
                         <div className="w-full">

@@ -14,7 +14,7 @@ const TouristSpot = ({ touristSpot }) => {
                     <p className="flex items-center"><CiLocationOn />{location},</p>
                     <p>{country}</p>
                 </div>
-                <div className="flex gap-40">
+                <div className="flex justify-between lg:gap-40">
                     <p className="flex items-center"><IoMdTime />{TravelTime}</p>
                     <p>Avg Cost: ${avgCost}</p>
                 </div>
@@ -22,9 +22,9 @@ const TouristSpot = ({ touristSpot }) => {
                     <p>Best Season: {season}</p>
                     <p>Total Visitor: {TotalVisitor}</p>
                 </div>
-                <div className="card-actions">
+                <div className="">
                     <Link to={`/spotDetails/${_id}`}>
-                        <button className="btn bg-green-500 text-white hover:bg-green-500">View Details</button>
+                        <button className="btn bg-green-500 text-white hover:bg-green-500 w-full lg:w-[120px]">View Details</button>
                     </Link>
                 </div>
             </div>

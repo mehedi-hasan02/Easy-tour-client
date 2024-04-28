@@ -17,12 +17,10 @@ const CountrySpot = ({ countrySpot }) => {
                     <p>{country}</p>
                 </div>
                 <div className="flex gap-40">
-                    {/* <p className="flex items-center"><IoMdTime />{TravelTime}</p> */}
                     <p>Avg Cost: ${avgCost}</p>
                 </div>
                 <div className="flex flex-col gap-2">
                     <p>Best Season: {season}</p>
-                    {/* <p>Total Visitor: {TotalVisitor}</p> */}
                 </div>
                 <div className="card-actions">
                     <Link to={`/spotDetails/${_id}`}>

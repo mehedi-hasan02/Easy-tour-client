@@ -3,6 +3,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
 import { FaRegUserCircle } from "react-icons/fa";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const Navbar = () => {
 
@@ -52,7 +53,11 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl">EasyTour</Link>
+                <Link to='/' className="btn btn-ghost text-xl lg:text-2xl font-bold lg:font-extrabold">
+                    <Slide delay>
+                    EasyTour
+                    </Slide>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
