@@ -3,14 +3,18 @@ import { Link } from "react-router-dom";
 
 const CountrySpot = ({ countrySpot }) => {
 
-    const { _id,image,spotName, country, location, shortDescription, season, avgCost } = countrySpot;
+    const { _id, image, spotName, country, location, shortDescription, season, avgCost } = countrySpot;
 
     return (
         <div className="card bg-base-100 shadow-xl mt-10 mb-10">
             <figure><img src={image} alt="Cox's Bazar" className="w-full h-[250px]" /></figure>
             <div className="space-y-2 p-3">
                 <h2 className="card-title">{spotName}</h2>
-                <p>Travel is the movement of people between relatively distant geographical locations.</p>
+                {
+                    shortDescription.length > 200 ? <p>{shortDescription.slice(0, 200)}</p> : <p>{shortDescription}</p>
+                }
+
+                {/* <p>Travel is the movement of people between relatively distant geographical locations.</p> */}
                 <hr />
                 <div className="flex gap-2">
                     <p className="flex items-center"><CiLocationOn />{location},</p>

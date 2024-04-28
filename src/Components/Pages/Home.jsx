@@ -1,21 +1,35 @@
 import { useLoaderData } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 import Banner from "../Banner/Banner";
 import TouristSpot from "../TouristSpot/TouristSpot";
 import { useEffect, useState } from "react";
 import CountryData from "../CountryData/CountryData";
+import PopulationSpot from "../PopulationSpot/PopulationSpot";
+import img1 from "../../assets/1.jpg";
+import img2 from "../../assets/2.jpg";
 
 
 const Home = () => {
-    const touristSpots = useLoaderData(); 
+    const touristSpots = useLoaderData();
     const [countryDatas, setCountryData] = useState([]);
+    const [popularSpots, setPopularSpot] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch('https://tourism-management-server-side.vercel.app/country')
-        .then(res=>res.json())
-        .then(data=>{
-            setCountryData(data);
-        })
-    },[]);
+            .then(res => res.json())
+            .then(data => {
+                setCountryData(data);
+            })
+    }, []);
+    useEffect(() => {
+        fetch('https://tourism-management-server-side.vercel.app/popular')
+            .then(res => res.json())
+            .then(data => {
+                setPopularSpot(data);
+            })
+    }, []);
+
+    console.log(popularSpots)
 
     return (
         <div>
@@ -27,7 +41,7 @@ const Home = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mb-10">
                     {
-                        touristSpots.slice(0,6).map(touristSpot => <TouristSpot key={touristSpot._id} touristSpot={touristSpot} ></TouristSpot>)
+                        touristSpots.slice(0, 6).map(touristSpot => <TouristSpot key={touristSpot._id} touristSpot={touristSpot} ></TouristSpot>)
                     }
                 </div>
                 <div className="text-center mt-12 mb-7 space-y-2">
@@ -39,6 +53,23 @@ const Home = () => {
                         countryDatas.map(country => <CountryData key={country._id} country={country}></CountryData>)
                     }
                 </div>
+                <div className="text-center">
+                    <h1><span className="text-4xl font-semibold">DESTINATION</span><br /><span className="text-orange-500 text-5xl font-bold">POPULAR PLACES</span></h1>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:mt-10 lg:mb-10">
+                    {
+                        popularSpots.map(popularSpot => <PopulationSpot key={popularSpot._id} popularSpot={popularSpot}></PopulationSpot>)
+                    }
+                </div>
+                <div className="text-center mt-5 md:mt-10 lg:mt-10">
+                    <h1 className="text-2xl md:text-3xl lg:text-3xl font-bold">Partner Company</h1>
+                </div>
+                <Marquee>
+                    <div className="flex justify-center items-center mt-5 mb-10">
+                        <img src={img1} alt="" className="h-[50px]" />
+                        <img src={img2} alt="" className="h-[40px]" />
+                    </div>
+                </Marquee>
             </div>
         </div>
     );
