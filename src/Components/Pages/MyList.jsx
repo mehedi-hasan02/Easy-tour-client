@@ -1,4 +1,3 @@
-import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FiEdit2 } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
@@ -13,7 +12,7 @@ const MyList = () => {
     // console.log(myListData);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/emailTour/${users.email}`)
+        fetch(`https://tourism-management-server-side.vercel.app/emailTour/${users.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyListData(data)
@@ -33,7 +32,7 @@ const MyList = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:8000/tourist/${id}`, {
+                    fetch(`https://tourism-management-server-side.vercel.app/tourist/${id}`, {
                         method: 'DELETE',
                     })
                         .then(res => res.json())
@@ -47,7 +46,6 @@ const MyList = () => {
                                 });
                                 const remaining = myListData.filter(data => data._id !== id);
                                 setMyListData(remaining);
-                                // window.location.reload();
                             }
                         })
                 }
@@ -57,10 +55,8 @@ const MyList = () => {
     return (
         <div className="overflow-x-auto md:min-h-[280px] lg:min-h-[700px]">
             <table className="table">
-                {/* head */}
                 <thead>
                     <tr>
-                        {/* <th></th> */}
                         <th>Tourist Spot Name</th>
                         <th>Location</th>
                         <th>Country</th>
@@ -71,7 +67,6 @@ const MyList = () => {
                 <tbody>
                     {
                         myListData.map(spot => <tr key={spot._id}>
-                            {/* <th>1</th> */}
                             <td>{spot.spotName}</td>
                             <td>{spot.location}</td>
                             <td>{spot.country}</td>

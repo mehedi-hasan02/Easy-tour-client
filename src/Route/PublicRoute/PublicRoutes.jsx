@@ -10,6 +10,7 @@ import Home from "../../Components/Pages/Home";
 import SpotDetails from "../../Components/SpotDetails/SpotDetails";
 import UpdateData from "../../Components/UpdateData/UpdateData";
 import Error from "../../Components/Error/Error";
+import TouristSpotByCountry from "../../Components/TouristSpotByCountry/TouristSpotByCountry";
 
 const router = createBrowserRouter([
     {
@@ -20,12 +21,12 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: ()=>fetch('http://localhost:8000/tourist'),
+            loader: ()=>fetch('https://tourism-management-server-side.vercel.app/tourist'),
         },
         {
             path: '/allTouristsSpots',
             element: <AllTouristsSpot/>,
-            loader: ()=>fetch('http://localhost:8000/tourist'),
+            loader: ()=>fetch('https://tourism-management-server-side.vercel.app/tourist'),
         },
         {
             path: '/login',
@@ -46,12 +47,17 @@ const router = createBrowserRouter([
         {
             path: '/spotDetails/:id',
             element: <PrivateRouter><SpotDetails></SpotDetails></PrivateRouter>,
-            loader: ({params})=>fetch(`http://localhost:8000/tourist/${params.id}`),
+            loader: ({params})=>fetch(`https://tourism-management-server-side.vercel.app/tourist/${params.id}`),
         },
         {
             path: '/update/:id',
             element: <PrivateRouter><UpdateData></UpdateData></PrivateRouter>,
-            loader: ({params}) => fetch(`http://localhost:8000/tourist/${params.id}`),
+            loader: ({params}) => fetch(`https://tourism-management-server-side.vercel.app/tourist/${params.id}`),
+        },
+        {
+            path: '/touristSpotByCountry/:country',
+            element: <TouristSpotByCountry></TouristSpotByCountry>,
+            loader: ({params})=>fetch(`https://tourism-management-server-side.vercel.app/countrySpot/${params.country}`),
         }
 
     ]

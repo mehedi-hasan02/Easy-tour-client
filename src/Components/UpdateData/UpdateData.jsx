@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
 const UpdateData = () => {
     const loadedSpot = useLoaderData();
+    const navigate = useNavigate();
 
     const handelUpdate = e => {
         e.preventDefault();
@@ -22,7 +23,7 @@ const UpdateData = () => {
 
         const touristSpotDetails = { spotName, location, country, season, avgCost, TravelTime, TotalVisitor, image, shortDescription }
 
-        fetch(`http://localhost:8000/tourist/${loadedSpot?._id}`, {
+        fetch(`https://tourism-management-server-side.vercel.app/tourist/${loadedSpot?._id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -32,15 +33,15 @@ const UpdateData = () => {
 
         .then(res=>res.json())
         .then(data=>{
-            // console.log(data);
             if(data.modifiedCount > 0)
             {
                 swal({
                     title: "Success",
-                    text: "Coffee Update Successfully",
+                    text: "Update Successfully",
                     icon: "success",
                     dangerMode: true,
                   })
+                  navigate('/')
             }
         })
     }
@@ -103,20 +104,6 @@ const UpdateData = () => {
                         <input type="text" name="image" defaultValue={loadedSpot?.image} placeholder="Enter image URL" className="input input-bordered w-full" />
                     </div>
                 </div>
-                {/* <div className="flex justify-center gap-6">
-                        <div className="w-full">
-                            <label className="label">
-                                <span className="label-text text-xl font-semibold">User Name</span>
-                            </label>
-                            <input type="text" name="userName" defaultValue={userName} readOnly className="input input-bordered w-full" />
-                        </div>
-                        <div className="w-full">
-                            <label className="label">
-                                <span className="label-text text-xl font-semibold">User Email</span>
-                            </label>
-                            <input type="email" name="userEmail" readOnly defaultValue={userEmail} className="input input-bordered w-full" />
-                        </div>
-                    </div> */}
                 <div className="w-full">
                     <label className="label">
                         <span className="label-text text-xl font-semibold">Short Description</span>
