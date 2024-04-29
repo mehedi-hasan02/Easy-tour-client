@@ -53,7 +53,7 @@ const UpdateData = () => {
         })
     }
     return (
-        <div className="mt-10 lg:mt-20 mb-5 md:mb-10 lg:mb-10">
+        <div className="mt-10 lg:mt-20 mb-5 md:mb-10 lg:mb-10 px-1 lg:px-0">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>EasyTour-Update Data</title>
