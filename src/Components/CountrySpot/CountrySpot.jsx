@@ -11,7 +11,7 @@ const CountrySpot = ({ countrySpot }) => {
             <div className="space-y-2 p-3">
                 <h2 className="card-title">{spotName}</h2>
                 {
-                    shortDescription.length > 200 ? <p>{shortDescription.slice(0, 200)}</p> : <p>{shortDescription}</p>
+                    shortDescription?.length > 200 ? <p>{shortDescription.slice(0, 200)}</p> : <p>{shortDescription}</p>
                 }
 
                 <hr />

@@ -58,7 +58,7 @@ const Home = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mb-10 px-2 lg:px-0">
                     {
-                        touristSpots.slice(0, 6).map(touristSpot => <TouristSpot key={touristSpot._id} touristSpot={touristSpot} ></TouristSpot>)
+                        touristSpots?.slice(0, 6).map(touristSpot => <TouristSpot key={touristSpot._id} touristSpot={touristSpot} ></TouristSpot>)
                     }
                 </div>
                 <div className="text-center mt-12 mb-7 space-y-2">
@@ -67,7 +67,7 @@ const Home = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10 px-2 lg:px-0">
                     {
-                        countryDatas.map(country => <CountryData key={country._id} country={country}></CountryData>)
+                        countryDatas?.map(country => <CountryData key={country._id} country={country}></CountryData>)
                     }
                 </div>
                 <div className="text-center">
@@ -75,7 +75,7 @@ const Home = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-5 lg:mt-10 lg:mb-10 px-2 lg:px-0">
                     {
-                        popularSpots.map(popularSpot => <PopulationSpot key={popularSpot._id} popularSpot={popularSpot}></PopulationSpot>)
+                        popularSpots?.map(popularSpot => <PopulationSpot key={popularSpot._id} popularSpot={popularSpot}></PopulationSpot>)
                     }
                 </div>
                 <div className="text-center mt-5 md:mt-10 lg:mt-10">

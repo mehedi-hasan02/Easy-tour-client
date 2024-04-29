@@ -2,13 +2,16 @@ import { CiLocationOn } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
 import { Link } from "react-router-dom";
 const TouristSpot = ({ touristSpot }) => {
-    const { _id, image, country, spotName, location, season, avgCost, TravelTime, TotalVisitor, } = touristSpot;
+    const { _id, image, country, spotName, location, season, avgCost, TravelTime, TotalVisitor, shortDescription} = touristSpot;
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure><img src={image} alt="" className="w-full h-[250px]" /></figure>
             <div className="space-y-2 p-3">
                 <h2 className="card-title">{spotName}</h2>
-                <p>Travel is the movement of people between relatively distant geographical locations.</p>
+                {/* <p>Travel is the movement of people between relatively distant geographical locations.</p> */}
+                {
+                    shortDescription?.length > 100 ? <p>{shortDescription.slice(0, 100)}...</p> : <p>{shortDescription}</p>
+                }
                 <hr />
                 <div className="flex gap-2">
                     <p className="flex items-center"><CiLocationOn className="text-green-400"/>{location},</p>
