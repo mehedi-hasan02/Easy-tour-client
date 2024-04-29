@@ -16,5 +16,6 @@
 - User can use both light and dark theme.
 
 #### Selected category
-- B9 A10 Type-01 Requirements
+- Southeast Asia
+- - Bangladesh
 
