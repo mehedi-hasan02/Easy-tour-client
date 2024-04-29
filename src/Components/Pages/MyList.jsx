@@ -41,7 +41,7 @@ const MyList = () => {
                             if (data.deletedCount > 0) {
                                 Swal.fire({
                                     title: "Deleted!",
-                                    text: "Your file has been deleted.",
+                                    text: "Your Spot Data has been Deleted.",
                                     icon: "success"
                                 });
                                 const remaining = myListData.filter(data => data._id !== id);
@@ -73,10 +73,10 @@ const MyList = () => {
                             <td>{spot.season}</td>
                             <td className='flex gap-1'>
                                 <Link to={`/update/${spot._id}`}>
-                                    <button className="btn"><FiEdit2 /></button>
+                                    <button className="btn bg-blue-400 hover:bg-blue-400 text-white"><FiEdit2 /></button>
                                 </Link>
                                 <Link>
-                                    <button onClick={() => handelDelete(spot._id)} className='btn'><MdDelete /></button>
+                                    <button onClick={() => handelDelete(spot._id)} className='btn bg-red-400 hover:bg-red-400'><MdDelete /></button>
                                 </Link>
                             </td>
                         </tr>)

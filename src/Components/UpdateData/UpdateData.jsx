@@ -37,7 +37,7 @@ const UpdateData = () => {
             {
                 swal({
                     title: "Success",
-                    text: "Update Successfully",
+                    text: "Spot Data Update Successfully",
                     icon: "success",
                     dangerMode: true,
                   })

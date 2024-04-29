@@ -10,7 +10,7 @@ const AddTouristsSpot = () => {
     const userEmail = users.email;
 
     const handleCountryChange = (e) => {
-        setSelectedCountry(e.target.value); // Update the selectedCountry state with the value from the select input
+        setSelectedCountry(e.target.value); 
     };
 
     const handelAddTourist = e => {
@@ -84,8 +84,8 @@ const AddTouristsSpot = () => {
                             <label className="label">
                                 <span className="label-text text-xl font-semibold">Country</span>
                             </label>
-                            <select className="select select-bordered w-full " onChange={handleCountryChange} value={selectedCountry}>
-                                <option disabled selected>Select Country</option>
+                            <select className="select select-bordered w-full " onChange={handleCountryChange} value={selectedCountry} required>
+                                <option value='' disabled>Select Country</option>
                                 <option value='Bangladesh'>Bangladesh</option>
                                 <option value='Thailand'>Thailand</option>
                                 <option value='Indonesia'>Indonesia</option>

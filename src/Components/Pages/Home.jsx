@@ -7,12 +7,15 @@ import CountryData from "../CountryData/CountryData";
 import PopulationSpot from "../PopulationSpot/PopulationSpot";
 import img1 from "../../assets/1.jpg";
 import img2 from "../../assets/2.jpg";
+import img3 from "../../assets/3.jpg";
+import img4 from "../../assets/4.jpg";
 
 
 const Home = () => {
     const touristSpots = useLoaderData();
     const [countryDatas, setCountryData] = useState([]);
     const [popularSpots, setPopularSpot] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch('https://tourism-management-server-side.vercel.app/country')
@@ -20,6 +23,7 @@ const Home = () => {
             .then(data => {
                 setCountryData(data);
             })
+            .finally (()=>setLoading(false))
     }, []);
     useEffect(() => {
         fetch('https://tourism-management-server-side.vercel.app/popular')
@@ -28,6 +32,15 @@ const Home = () => {
                 setPopularSpot(data);
             })
     }, []);
+
+    if(loading)
+    {
+        return (
+            <div className='text-center'>
+                <span className="loading loading-dots loading-lg"></span>
+            </div>
+        )
+    }
 
     console.log(popularSpots)
 
@@ -65,9 +78,11 @@ const Home = () => {
                     <h1 className="text-2xl md:text-3xl lg:text-3xl font-bold">Partner Company</h1>
                 </div>
                 <Marquee>
-                    <div className="flex justify-center items-center mt-5 mb-10">
+                    <div className="flex justify-center items-center mt-5 mb-10 gap-8">
                         <img src={img1} alt="" className="h-[50px]" />
                         <img src={img2} alt="" className="h-[40px]" />
+                        <img src={img3} alt="" className="h-[40px]" />
+                        <img src={img4} alt="" className="h-[40px]" /> 
                     </div>
                 </Marquee>
             </div>

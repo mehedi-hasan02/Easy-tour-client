@@ -1,19 +1,30 @@
 import { Link, useLoaderData } from "react-router-dom";
 import TouristSpot from "../TouristSpot/TouristSpot";
-import { useContext, useState } from "react";
-import { AuthContext } from "../AuthProvider/AuthProvider";
+import { useEffect, useState } from "react";
 
 const AllTouristsSpot = () => {
-    const {loading} = useContext(AuthContext);
+    
     const touristSpots = useLoaderData();
-    const [allTouristsSpotData, setAllTouristsSpotData] = useState(touristSpots);
+    const [allTouristsSpotData, setAllTouristsSpotData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // if(loading)
-    // {
-    //     <div className='text-center'>
-    //             <span className="loading loading-dots loading-lg"></span>
-    //         </div>
-    // }
+    useEffect(()=>{
+        setLoading(true)
+        setTimeout(()=>{
+            setAllTouristsSpotData(touristSpots)
+            setLoading(false)
+        },2000)
+    
+    },[touristSpots])
+
+    if(loading)
+    {
+        return(
+            <div className='text-center'>
+                <span className="loading loading-dots loading-lg"></span>
+            </div>
+        )
+    }
 
     const handelSort = (sortBy) =>{
         if(sortBy === "avgCost")
