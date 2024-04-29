@@ -1,12 +1,18 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
+import { Helmet } from "react-helmet";
 
 const SpotDetails = () => {
     const loadedSpot = useLoaderData();
     const { image, country, spotName, location, season, avgCost, TravelTime, TotalVisitor,shortDescription } = loadedSpot;
     return (
         <div className="card lg:card-side bg-base-100 shadow-xl mt-10 mb-20">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>EasyTour-Details</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <figure><img src={image} alt="Movie"/></figure>
             <div className="p-5 space-y-2">
                 <h2 className="card-title">{spotName}</h2>

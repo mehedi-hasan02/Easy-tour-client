@@ -43,7 +43,7 @@ const Register = () => {
         <div className="mt-10 mb-10 p-5">
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Register</title>
+                <title>EasyTour-Register</title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
             <h1 className="text-5xl font-bold text-center mt-5 mb-5">Register now!</h1>

@@ -1,11 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import CountrySpot from "../CountrySpot/CountrySpot";
+import { Helmet } from "react-helmet";
 
 const TouristSpotByCountry = () => {
     const loadedCountryData = useLoaderData();
 
     return (
         <div className="mt-5 md:mt-10 lg:mt-10">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>EasyTour-Countries</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="text-center">
                 <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold">Selected Tourists Spot</h1>
             </div>

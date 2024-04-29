@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const MyList = () => {
     const { users } = useContext(AuthContext);
@@ -51,6 +52,11 @@ const MyList = () => {
 
     return (
         <div className="overflow-x-auto md:min-h-[280px] min-h-[250px] md:min-h-[700px] lg:min-h-[700px]">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>EasyTour-MyList</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <table className="table">
                 <thead>
                     <tr>

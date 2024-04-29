@@ -9,6 +9,7 @@ import img1 from "../../assets/1.jpg";
 import img2 from "../../assets/2.jpg";
 import img3 from "../../assets/3.jpg";
 import img4 from "../../assets/4.jpg";
+import { Helmet } from "react-helmet";
 
 
 const Home = () => {
@@ -44,6 +45,11 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>EasyTour-Home</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="lg:mt-10">
                 <Banner></Banner>
                 <div className="mt-5 md:mt-8 lg:mt-12 text-center space-y-3 mb-10 md:p-5">

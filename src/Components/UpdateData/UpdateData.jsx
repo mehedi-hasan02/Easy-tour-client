@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
@@ -53,6 +54,11 @@ const UpdateData = () => {
     }
     return (
         <div className="mt-10 lg:mt-20 mb-5 md:mb-10 lg:mb-10">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>EasyTour-Update Data</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="text-center mb-5">
                 <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold">Update Tourist Spot Data</h1>
             </div>

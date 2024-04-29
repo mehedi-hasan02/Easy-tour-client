@@ -6,6 +6,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from 'react-hot-toast';
 // import { Helmet } from "react-helmet";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
 
@@ -49,6 +50,11 @@ const Login = () => {
 
     return (
             <div className="hero-content flex-col w-full lg:w-[1000px] lg:h-[690px] mx-auto">
+                <Helmet>
+                <meta charSet="utf-8" />
+                <title>EasyTour-Login</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
                 <div className="text-center lg:text-left mb-10">
                     <h1 className="text-5xl font-bold">Login now!</h1>
                 </div>

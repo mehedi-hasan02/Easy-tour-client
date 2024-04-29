@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import swal from 'sweetalert';
+import { Helmet } from "react-helmet";
 
 const AddTouristsSpot = () => {
 
@@ -55,6 +56,11 @@ const AddTouristsSpot = () => {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>EasyTour-AddTouristsSpot</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="text-center mt-10 space-y-5">
                 <h1 className="text-3xl font-bold">Add Tourists Spot</h1>
                 <p className="lg:w-2/3 mx-auto">Welcome to our 'Add Tourist Spot' page! Have you discovered an amazing destination that the world should know about? Share it with us here. Simply fill out the form with details about the tourist spot, including its name, location, description, and any captivating images you have. Help us enrich our database and inspire fellow travelers to explore new horizons. Let's promote tourism together!</p>

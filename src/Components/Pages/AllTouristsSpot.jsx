@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import TouristSpot from "../TouristSpot/TouristSpot";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 const AllTouristsSpot = () => {
     
@@ -36,6 +37,11 @@ const AllTouristsSpot = () => {
 
     return (
         <div className="mt-5 lg:mt-10 lg:mb-10">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>EasyTour-AllTouristsSpot</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="text-center space-y-3 mb-10">
                 <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold md:font-extrabold">All Tourists Spot</h2>
                 <p className="lg:w-2/3 mx-auto">Explore the world's most captivating destinations with our 'All Tourist Spots' section, offering a curated selection of must-visit places, from iconic landmarks to hidden gems, ensuring unforgettable travel experiences for every adventurer.</p>
