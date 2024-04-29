@@ -67,9 +67,9 @@ const Home = () => {
                     }
                 </div>
                 <div className="text-center">
-                    <h1><span className="text-4xl font-semibold">DESTINATION</span><br /><span className="text-orange-500 text-5xl font-bold">POPULAR PLACES</span></h1>
+                    <h1><span className="text-2xl md:text-4xl lg:text-4xl font-semibold">DESTINATION</span><br /><span className="text-orange-500 text-3xl md:text-4xl lg:text-5xl font-bold">POPULAR PLACES</span></h1>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:mt-10 lg:mb-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-5 lg:mt-10 lg:mb-10">
                     {
                         popularSpots.map(popularSpot => <PopulationSpot key={popularSpot._id} popularSpot={popularSpot}></PopulationSpot>)
                     }

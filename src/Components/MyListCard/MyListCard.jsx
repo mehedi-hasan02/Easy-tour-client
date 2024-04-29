@@ -1,5 +1,3 @@
-import React from 'react';
-
 const MyListCard = ({ spot }) => {
     const { spotName, location, country, season, avgCost } = spot;
 

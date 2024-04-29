@@ -4,19 +4,16 @@ import { MdDelete } from "react-icons/md";
 import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-// import MyListCard from '../MyListCard/MyListCard'
 
 const MyList = () => {
     const { users } = useContext(AuthContext);
     const [myListData, setMyListData] = useState([]);
-    // console.log(myListData);
 
     useEffect(() => {
         fetch(`https://tourism-management-server-side.vercel.app/emailTour/${users.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyListData(data)
-                // console.log(data);
             })
     }, [])
 

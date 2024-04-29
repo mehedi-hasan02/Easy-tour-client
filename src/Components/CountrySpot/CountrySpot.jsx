@@ -14,7 +14,6 @@ const CountrySpot = ({ countrySpot }) => {
                     shortDescription.length > 200 ? <p>{shortDescription.slice(0, 200)}</p> : <p>{shortDescription}</p>
                 }
 
-                {/* <p>Travel is the movement of people between relatively distant geographical locations.</p> */}
                 <hr />
                 <div className="flex gap-2">
                     <p className="flex items-center"><CiLocationOn />{location},</p>
@@ -26,9 +25,9 @@ const CountrySpot = ({ countrySpot }) => {
                 <div className="flex flex-col gap-2">
                     <p>Best Season: {season}</p>
                 </div>
-                <div className="card-actions">
+                <div className="">
                     <Link to={`/spotDetails/${_id}`}>
-                        <button className="btn bg-green-500 text-white hover:bg-green-500">View Details</button>
+                        <button className="btn bg-green-500 text-white hover:bg-green-500 w-full lg:w-[120px]">View Details</button>
                     </Link>
                 </div>
             </div>

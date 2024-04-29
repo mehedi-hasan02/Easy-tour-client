@@ -7,7 +7,7 @@ const TouristSpotByCountry = () => {
     return (
         <div>
             <div>
-                <h1>Tourists Spot In {loadedCountryData.country}</h1>
+                {/* <h1>Tourists Spot In {loadedCountryData.country}</h1> */}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {

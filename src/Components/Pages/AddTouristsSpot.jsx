@@ -77,10 +77,6 @@ const AddTouristsSpot = () => {
                     </div>
                     <div className="flex flex-col lg:flex-row justify-center gap-2 lg:gap-6">
                         <div className="w-full">
-                            {/* <label className="label">
-                                <span className="label-text text-xl font-semibold">Country</span>
-                            </label>
-                            <input type="text" name="country" placeholder="Enter country name" className="input input-bordered w-full" required/> */}
                             <label className="label">
                                 <span className="label-text text-xl font-semibold">Country</span>
                             </label>

@@ -12,7 +12,7 @@ const PopulationSpot = ({popularSpot}) => {
                         <p>{popularSpot.shortDescription}</p>
                     </div>
                     <div>
-                        <p className="flex items-center gap-1"><CiLocationOn/> {popularSpot.country}</p>
+                        <p className="flex items-center gap-1"><CiLocationOn className="text-green-400"/> {popularSpot.country}</p>
                     </div>
                 </div>
             </div>
