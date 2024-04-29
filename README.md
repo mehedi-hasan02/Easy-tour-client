@@ -17,5 +17,10 @@
 
 #### Selected category
 - Southeast Asia
-- - Bangladesh
+ - Bangladesh
+ - Thailand
+ - Indonesia
+ - Malaysia
+ - Vietnam
+ - Cambodia
 
