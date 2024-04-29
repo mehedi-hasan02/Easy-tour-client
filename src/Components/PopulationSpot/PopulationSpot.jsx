@@ -1,6 +1,5 @@
 import { CiLocationOn } from "react-icons/ci";
 const PopulationSpot = ({popularSpot}) => {
-    console.log(popularSpot);
     return (
         <div className="card bg-base-100 shadow-xl">
                 <figure><img src={popularSpot.image} alt="" className="w-full h-[250px]" /></figure>

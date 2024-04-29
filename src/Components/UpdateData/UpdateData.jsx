@@ -1,9 +1,15 @@
+import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
 const UpdateData = () => {
     const loadedSpot = useLoaderData();
     const navigate = useNavigate();
+    const [selectedCountry, setSelectedCountry] = useState("");
+
+    const handleCountryChange = (e) => {
+        setSelectedCountry(e.target.value); 
+    };
 
     const handelUpdate = e => {
         e.preventDefault();
@@ -13,7 +19,7 @@ const UpdateData = () => {
 
         const spotName = form.name.value;
         const location = form.location.value;
-        const country = form.country.value;
+        const country = selectedCountry;
         const season = form.season.value;
         const avgCost = form.avgCost.value;
         const TravelTime = form.TravelTime.value;
@@ -46,9 +52,12 @@ const UpdateData = () => {
         })
     }
     return (
-        <div>
+        <div className="mt-10 lg:mt-20 mb-5 md:mb-10 lg:mb-10">
+            <div className="text-center mb-5">
+                <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold">Update Tourist Spot Data</h1>
+            </div>
             <form onSubmit={handelUpdate}>
-                <div className="flex justify-center gap-6">
+                <div className="flex flex-col lg:flex-row justify-center lg:gap-6">
                     <div className="w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Tourists Spot Name</span>
@@ -62,12 +71,21 @@ const UpdateData = () => {
                         <input type="text" name="location" defaultValue={loadedSpot?.location} placeholder="Enter tourists location" className="input input-bordered w-full" />
                     </div>
                 </div>
-                <div className="flex justify-center gap-6">
+                <div className="flex flex-col lg:flex-row justify-center lg:gap-6">
                     <div className="w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Country</span>
                         </label>
-                        <input type="text" name="country" defaultValue={loadedSpot?.country} placeholder="Enter country name" className="input input-bordered w-full" />
+                        {/* <input type="text" name="country" defaultValue={loadedSpot?.country} placeholder="Enter country name" className="input input-bordered w-full" /> */}
+                        <select className="select select-bordered w-full " onChange={handleCountryChange} value={selectedCountry} required>
+                                {/* <option value='' disabled>Select Country</option> */}
+                                <option value='Bangladesh'>Bangladesh</option>
+                                <option value='Thailand'>Thailand</option>
+                                <option value='Indonesia'>Indonesia</option>
+                                <option value='Malaysia'>Malaysia</option>
+                                <option value='Vietnam'>Vietnam</option>
+                                <option value='Cambodia'>Cambodia</option>
+                            </select>
                     </div>
                     <div className="w-full">
                         <label className="label">
@@ -76,7 +94,7 @@ const UpdateData = () => {
                         <input type="text" name="season" defaultValue={loadedSpot?.season} placeholder="Enter seasonality" className="input input-bordered w-full" />
                     </div>
                 </div>
-                <div className="flex justify-center gap-6">
+                <div className="flex flex-col lg:flex-row justify-center lg:gap-6">
                     <div className="w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Average Cost</span>
@@ -90,7 +108,7 @@ const UpdateData = () => {
                         <input type="text" name="TravelTime" defaultValue={loadedSpot?.TravelTime} placeholder="How many day you want to stay!" className="input input-bordered w-full" />
                     </div>
                 </div>
-                <div className="flex justify-center gap-6">
+                <div className="flex flex-col lg:flex-row justify-center lg:gap-6">
                     <div className="w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Total Visitor Per-Year</span>
