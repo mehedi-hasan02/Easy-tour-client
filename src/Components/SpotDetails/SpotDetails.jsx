@@ -21,7 +21,7 @@ const SpotDetails = () => {
                     <p className="flex items-center"><CiLocationOn className="text-green-400"/>{location},</p>
                     <p>{country}</p>
                 </div>
-                <div className="flex justify-between lg:gap-40">
+                <div className="flex justify-between lg:justify-normal lg:gap-40">
                     <p className="flex items-center"><IoMdTime className="text-orange-400"/>{TravelTime}</p>
                     <p>Avg Cost: ${avgCost}</p>
                 </div>

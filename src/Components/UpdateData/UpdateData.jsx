@@ -68,13 +68,13 @@ const UpdateData = () => {
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Tourists Spot Name</span>
                         </label>
-                        <input type="text" name="name" defaultValue={loadedSpot?.spotName} placeholder="Enter your tourists name" className="input input-bordered w-full" />
+                        <input type="text" name="name" defaultValue={loadedSpot?.spotName} placeholder="Enter your tourists name" className="input input-bordered w-full" required/>
                     </div>
                     <div className="w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Location</span>
                         </label>
-                        <input type="text" name="location" defaultValue={loadedSpot?.location} placeholder="Enter tourists location" className="input input-bordered w-full" />
+                        <input type="text" name="location" defaultValue={loadedSpot?.location} placeholder="Enter tourists location" className="input input-bordered w-full" required/>
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-center lg:gap-6">
@@ -82,7 +82,6 @@ const UpdateData = () => {
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Country</span>
                         </label>
-                        {/* <input type="text" name="country" defaultValue={loadedSpot?.country} placeholder="Enter country name" className="input input-bordered w-full" /> */}
                         <select className="select select-bordered w-full " onChange={handleCountryChange} value={selectedCountry} required>
                                 {/* <option value='' disabled>Select Country</option> */}
                                 <option value='Bangladesh'>Bangladesh</option>
@@ -97,7 +96,7 @@ const UpdateData = () => {
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Season</span>
                         </label>
-                        <input type="text" name="season" defaultValue={loadedSpot?.season} placeholder="Enter seasonality" className="input input-bordered w-full" />
+                        <input type="text" name="season" defaultValue={loadedSpot?.season} placeholder="Enter seasonality" className="input input-bordered w-full" required/>
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-center lg:gap-6">
@@ -105,13 +104,13 @@ const UpdateData = () => {
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Average Cost</span>
                         </label>
-                        <input type="number" name="avgCost" defaultValue={loadedSpot?.avgCost} placeholder="Enter average cost" className="input input-bordered w-full" />
+                        <input type="number" name="avgCost" defaultValue={loadedSpot?.avgCost} placeholder="Enter average cost" className="input input-bordered w-full" required/>
                     </div>
                     <div className="w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Travel Time</span>
                         </label>
-                        <input type="text" name="TravelTime" defaultValue={loadedSpot?.TravelTime} placeholder="How many day you want to stay!" className="input input-bordered w-full" />
+                        <input type="text" name="TravelTime" defaultValue={loadedSpot?.TravelTime} placeholder="How many day you want to stay!" className="input input-bordered w-full" required/>
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-center lg:gap-6">
@@ -119,13 +118,13 @@ const UpdateData = () => {
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Total Visitor Per-Year</span>
                         </label>
-                        <input type="text" name="TotalVisitor" defaultValue={loadedSpot?.TotalVisitor} placeholder="Total visitor per-year" className="input input-bordered w-full" />
+                        <input type="number" name="TotalVisitor" defaultValue={loadedSpot?.TotalVisitor} placeholder="Total visitor per-year" className="input input-bordered w-full" required/>
                     </div>
                     <div className="w-full">
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Image</span>
                         </label>
-                        <input type="text" name="image" defaultValue={loadedSpot?.image} placeholder="Enter image URL" className="input input-bordered w-full" />
+                        <input type="text" name="image" defaultValue={loadedSpot?.image} placeholder="Enter image URL" className="input input-bordered w-full" required/>
                     </div>
                 </div>
                 <div className="w-full">
