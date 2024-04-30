@@ -3,6 +3,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
 import { FaRegUserCircle } from "react-icons/fa";
+import { Slide } from "react-awesome-reveal";
 
 const Navbar = () => {
 
