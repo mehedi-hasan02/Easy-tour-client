@@ -53,10 +53,10 @@ const Home = () => {
             <div className="lg:mt-10">
                 <Banner></Banner>
                 <div className="mt-5 md:mt-8 lg:mt-12 text-center space-y-3 mb-10 md:p-5">
-                    <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold">Tourists Spots</h1>
+                    <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold ">Tourists Spots</h1>
                     <p className="lg:w-2/3 mx-auto">Tourist Spots is a curated selection of destinations that encapsulate the essence and charm of a particular region or locale. From iconic landmarks to hidden gems, these spots offer visitors an opportunity to immerse themselves in the culture, history, and natural beauty of a destination. Whether it's exploring historic sites, indulging in culinary delights, or simply soaking in breathtaking vistas, "Tourist Spots" aims to inspire wanderlust and facilitate memorable travel experiences for adventurers of all kinds.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mb-10 px-2 lg:px-0">
+                <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mb-10 px-2 lg:px-0">
                     {
                         touristSpots?.slice(0, 6).map(touristSpot => <TouristSpot key={touristSpot._id} touristSpot={touristSpot} ></TouristSpot>)
                     }

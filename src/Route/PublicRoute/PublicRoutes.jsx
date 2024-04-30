@@ -11,6 +11,7 @@ import SpotDetails from "../../Components/SpotDetails/SpotDetails";
 import UpdateData from "../../Components/UpdateData/UpdateData";
 import Error from "../../Components/Error/Error";
 import TouristSpotByCountry from "../../Components/TouristSpotByCountry/TouristSpotByCountry";
+import ContactUs from "../../Components/ContactUs/ContactUs";
 
 const router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
             path: '/touristSpotByCountry/:country',
             element: <TouristSpotByCountry></TouristSpotByCountry>,
             loader: ({params})=>fetch(`https://tourism-management-server-side.vercel.app/countrySpot/${params.country}`),
+        },
+        {
+            path: '/contactUs',
+            element: <ContactUs></ContactUs>
         }
 
     ]
