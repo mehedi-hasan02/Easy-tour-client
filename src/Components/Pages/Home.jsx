@@ -85,8 +85,8 @@ const Home = () => {
                     <div className="flex justify-center items-center mt-5 mb-10 gap-8">
                         <img src={img1} alt="" className="h-[50px]" />
                         <img src={img2} alt="" className="h-[40px]" />
-                        <img src={img3} alt="" className="h-[40px]" />
-                        <img src={img4} alt="" className="h-[40px]" /> 
+                        <img src={img3} alt="" className="h-[40px] w-[85px]" />
+                        <img src={img4} alt="" className="h-[40px] w-[85px]" /> 
                     </div>
                 </Marquee>
             </div>

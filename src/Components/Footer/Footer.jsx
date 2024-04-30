@@ -18,7 +18,7 @@ const Footer = () => {
                 </div>
             </nav>
             <aside>
-                <p>Copyright © 2024 - All right reserved by EasyTour Private LTD</p>
+                <p>Copyright © 2024 - All right reserved by EasyTour Travel Agency LTD</p>
             </aside>
         </footer>
     );

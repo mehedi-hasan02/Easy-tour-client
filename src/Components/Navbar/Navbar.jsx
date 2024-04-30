@@ -3,7 +3,6 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
 import { FaRegUserCircle } from "react-icons/fa";
-import { Fade, Slide } from "react-awesome-reveal";
 
 const Navbar = () => {
 
@@ -32,8 +31,6 @@ const Navbar = () => {
             setTheme('light');
         }
     }
-
-    // use react tooltip in dark and light mode
 
     const navLink = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-400 border border-orange-400 btn hover:bg-white shadow-none hover:border-orange-400' : 'btn  shadow-none border-none'}>Home</NavLink></li>
