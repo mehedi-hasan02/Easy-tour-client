@@ -9,7 +9,7 @@ const firebaseConfig = {
   projectId:all.VITE_PROJECTID, 
   storageBucket:all.VITE_STORAGEBUCKET, 
   messagingSenderId:all.VITE_MESSAGINGSENDERID, 
-  appId:all.VITE_APPID, 
+  appId:all.VITE_APPID,
 };
 
 // Initialize Firebase
